@@ -1,18 +1,14 @@
-# Highlighting
+# Pan & Zoom
 
-Highlighting allow us to mark an area 
-
-**Direct**
-
-Select direct value using `hover`
+By binding scales, it is possible to Pan & Zoom the visualisation.
 
 ```vis
 data:
   url: data/cars.csv
 selection:
   pts:
-    type: single
-    on: mouseover
+    type: interval
+    bind: scales
 mark: circle
 encoding:
   x:
