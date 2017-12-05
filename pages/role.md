@@ -27,6 +27,16 @@ Role of visualisaiton in each of these steps of the data science pipeline
 - *Insight*: **Vis Comm** (chart, narrative, dashboard)
 
 
-## Tools for Interactive Visualisation
+# Visualisation Tools & Stack
+
+## Approach
+
+There are five fundamental approaches to create interactive visualisation
 
 ![](img/declarative.jpg)
+
+## Interactive Vis on the Web
+
+The [layers of abstraction](http://layers.amitkaps.com) that are available for making visualization for the web.
+
+![](img/layers.svg)
