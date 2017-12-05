@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Interactive Data Visualisation">
+<meta name="author" content="Amit Kapoor">
+
+<title>Interactive Data Visualisation</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lib/github-markdown.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.8/vega.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.3/vega-lite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-rc7/vega-embed.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.7/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+<script src="/lib/visdown.js"></script>
+    
+<header>
+  <p><a href="\">home</a> | <a href="http://amitkaps.com"> amitkaps.com </a></p>
+  <h1> Interactive Data Visualisation</h1>
+  <div class="flex-grid">
+    <div class="col">
+      <h3> OVERVIEW </h3>
+      <ul>
+          <li><a href="#intro">Introduction</a></li>
+          <li><a href="#grammar">Grammar</a></li>
+          <li><a href="#tools">Filter &amp; Sort </a></li>
+          <li><a href="#tutorial">Summarize</a></li>
+          <li><a href="#tutorial">Groupby</a></li>
+          <li><a href="#combine">Combine</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3> DATA </h3>
+      <ul>
+          <li><a href="#types">Types</a></li>
+          <li><a href="#load">Load</a></li>
+          <li><a href="#transform">Transform</a></li>
+          <li><a href="#filter">Filter</a></li>
+          <li><a href="#calculate">Calculate</a></li>
+          <li><a href="#aggregate">Aggregate</a></li>
+      </ul>
+    </div>
+    <div class="col">
+        <h3>VISUAL</h3>
+        <ul>
+            <li><a href="#visual">Overview</a></li>
+            <li><a href="#mark">Mark</a></li>
+            <li><a href="#encoding">Encoding</a></li>
+            <li><a href="#position">Position</a></li> 
+            <li><a href="#scales">Scales</a></li>
+            <li><a href="#annotate">Annotate</a></li>
+      </div>
+    <div class="col">
+      <h3>COMPOSITION</h3>
+      <ul>
+          <li><a href="#compose">Compose</a></li>
+          <li><a href="#layer">Layer</a></li>
+          <li><a href="#facet">Facet</a></li>
+          <li><a href="#repeat">Repeat</a></li>
+          <li><a href="#concat">Concat</a></li>
+          <li><a href="#resolve">Resolve</a></li>
+    </div>
+    <div class="col">
+        <h3>INTERACTION</h3>
+        <ul>
+            <li><a href="#select">Selection</a></li>
+            <li><a href="#Highlight">Transition</a></li>
+            <li><a href="#input">Input Bind</a></li>
+            <li><a href="#transition">Transition</a></li>
+            <li><a href="#motion">Motion</a></li>
+    </div>
+    </div>
+</header>
+
+<main>
+  <section id="visdown-output" class="markdown-body"></section>
+</main>
+
+<script>
+
+const output = document.getElementById("visdown-output");
+
+function _getChapter () {
+  let hash = window.location.hash
+  let file = hash.replace("#", "");
+  let fileName = file == "" ? "intro.md" : file + ".md";
+  let fileUrl = "pages/" + fileName;
+
+  fetch(fileUrl).then(data => data.text()).then(data => {
+    visdown(data, output);
+    });
+  }
+
+window.onhashchange = function () {_getChapter();}
+_getChapter(); 
+
+  // const getExample = function () {
+  //   let hash = window.location.hash
+  //   let file = hash.replace("#", "");
+  //   let fileName = file == "" ? "basic.html" : file + ".html";
+  //   let fileUrl = "example/" + fileName;
+  // 
+  //   const iframeNode = document.querySelector('#frame');
+  //   iframeNode.src = fileUrl;
+  // 
+  //   const nameNode = document.querySelector("#name");
+  //   nameNode.innerHTML = '<a href="' + fileUrl + '">' + fileName + '</a>';
+  //   const fileNode = document.querySelector("#fileNode");
+  //   // fileNode.innerHTML = htmlfile + ".html"
+  // 
+  //   d3.text(fileUrl, function(error, content) {
+  //     if (error) content = "Loading error...";
+  //     fileNode.textContent = content;
+  //     hljs.highlightBlock(fileNode);
+  //   });
+  // }
+  // 
+  // window.onhashchange = function () {getExample();}
+  // getExample();
+
+</script>
