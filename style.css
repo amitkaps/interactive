@@ -16,7 +16,7 @@ header {
   position: relative;
   margin: 10px auto;
   padding: 0 10px;
- 
+  font-size: 0.8rem;
 }
 
 main {
@@ -48,7 +48,6 @@ iframe {
 .flex-grid {
   display: flex;
   margin-top: 20px;
-  font-size: 0.8rem;
 
 }
 
